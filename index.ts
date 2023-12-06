@@ -12,8 +12,6 @@ const client = createDirectus<Collections>('http://localhost:8055')
                   .with(rest())
                   .with(staticToken('123456'));
 
-// Request to retrieve items from the 'products' collection with specific fields (id, title)
-// This is without any filters applied
 async function getProducts() {
   const response: {
     id: string;
@@ -33,9 +31,6 @@ async function getProducts() {
   return response;
 }
 
-// Request to retrieve items from the 'products' collection with specific fields (id, title)
-// This includes a filter to only get items with the status 'published'
-// Unfortunatly, fields id and title are not resolved in this case
 async function getProducts2() {
   const response: {
     id: string;
