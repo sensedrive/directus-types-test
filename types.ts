@@ -1,28 +1,13 @@
+interface ProductCategory {
+  id: string;
+  title: string;
+}
+
 export interface Product {
-
-  /**
-   * No description.
-   *
-   * Type in directus: uuid
-   * Type in database: uuid
-   */
    id: string;
-
-  /**
-   * No description.
-   *
-   * Type in directus: string
-   * Type in database: character varying
-   */
-   status: 'published' | 'archived' | null;
-
-  /**
-   * No description.
-   *
-   * Type in directus: string
-   * Type in database: character varying
-   */
    title: string;
+   product_category: ProductCategory | null | string;
+   status: 'published' | 'archived' | null;
 }
 
 export type Collections = {
